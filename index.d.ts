@@ -533,6 +533,11 @@ export class AxiosError<T = unknown, D = any> extends Error {
 }
 
 export class CanceledError<T> extends AxiosError<T> {
+  constructor(
+    message?: string | null,
+    config?: InternalAxiosRequestConfig,
+    request?: any
+  );
   readonly name: 'CanceledError';
 }
 

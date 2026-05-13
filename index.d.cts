@@ -162,7 +162,13 @@ declare class AxiosError<T = unknown, D = any> extends Error {
   static readonly ETIMEDOUT = 'ETIMEDOUT';
 }
 
-declare class CanceledError<T> extends AxiosError<T> {}
+declare class CanceledError<T> extends AxiosError<T> {
+  constructor(
+    message?: string | null,
+    config?: axios.InternalAxiosRequestConfig,
+    request?: any
+  );
+}
 
 declare class Axios {
   constructor(config?: axios.AxiosRequestConfig);
